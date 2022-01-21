@@ -16,7 +16,7 @@ class haziertekelesFactory extends Factory
         return [
             'url' => $this->faker->url(),
             'szoveges_ertekeles' => $this->faker->text(),
-            'pontszam_ertekeles' => $this->faker->numberBetween(1, 5),
+            'pontszam_ertekeles' => $this->faker->numberBetween(1, 100),
         ];
     }
 }

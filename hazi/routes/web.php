@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Haziertekeles;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('hazi');
+    $hazi = Haziertekeles::all();
+    return view('hazi', ["hazi" => $hazi]);
 });

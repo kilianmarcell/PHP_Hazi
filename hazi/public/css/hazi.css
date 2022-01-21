@@ -1,0 +1,36 @@
+* {
+    background: black;
+    color: white;
+}
+
+div {
+    margin: auto;
+    width: 80%;
+}
+
+h1 {
+    text-align: center;
+    margin: 50px;
+    font-size: 40px;
+    text-decoration: underline;
+}
+
+table {
+    border: 1px solid white;
+}
+
+th {
+    font-size: 30px;
+}
+
+tr {
+    height: 70px;
+}
+
+.kozep {
+    text-align: center;
+}
+
+.sorkizart {
+    text-align: justify;
+}
