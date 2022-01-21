@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HaziController;
 use App\Models\Haziertekeles;
 use Illuminate\Support\Facades\Route;
 
@@ -16,5 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     $hazi = Haziertekeles::all();
-    return view('hazi', ["hazi" => $hazi]);
+    return view('hazik.index', ["hazi" => $hazi]);
 });
+
+Route::resource('hazi', HaziController::class);

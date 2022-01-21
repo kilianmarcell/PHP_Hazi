@@ -1,0 +1,1 @@
+Kontroller generálása -> php artisan make:controller -m Tablanev TablanevController

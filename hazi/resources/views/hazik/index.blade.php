@@ -19,7 +19,7 @@
             <tbody>
                 @foreach ($hazi as $h)
                 <tr>
-                    <td>{{ $h->url }}</td>
+                    <td><a href="{{ route('hazi.show', $h->id) }}">{{ $h->url }}</a></td>
                     <td class="sorkizart">{{ $h->szoveges_ertekeles }}</td>
                     <td class="kozep">{{ $h->pontszam_ertekeles }}</td>
                 </tr>
