@@ -15,7 +15,7 @@ class CreateHaziertekelesTable extends Migration
     {
         Schema::create('haziertekeles', function (Blueprint $table) {
             $table->id();
-            $table->string("url");
+            $table->string("url")->unique();
             $table->string("szoveges_ertekeles");
             $table->integer("pontszam_ertekeles");
             $table->timestamps();
