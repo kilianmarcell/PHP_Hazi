@@ -24,7 +24,11 @@ th {
 }
 
 tr {
-    height: 70px;
+    height: 80px;
+}
+
+td {
+    padding: 10px;
 }
 
 .kozep {
@@ -48,5 +52,14 @@ button {
     color: black;
     font-size: 20px;
     padding: 10px;
+    margin: 20px;
+}
+
+.kitoltendo {
+    font-size: 30px;
+}
+
+input {
+    font-size: 30px;
     margin: 20px;
 }

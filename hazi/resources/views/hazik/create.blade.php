@@ -20,21 +20,21 @@
           <form method='POST' action="{{ route('hazik.store') }}">
                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                <div>
-                    Url:<br>
+                    <selection class="kitoltendo">Url:</selection><br>
                     <input type="text" name="url" value="{{ old('url') }}">
                     @error('url')
                          <p>{{ $message }}</p>
                     @enderror
                </div>
                <div>
-                    Szöveges értékelés:<br>
+                    <selection class="kitoltendo">Szöveges értékelés:</selection><br>
                     <input type="text" name="szoveges_ertekeles" value="{{ old('szoveges_ertekeles') }}">
                     @error('szoveges_ertekeles')
                          <p>{{ $message }}</p>
                     @enderror
                </div>
                <div>
-                    Pontszám:<br>
+               <selection class="kitoltendo">Pontszám:</selection><br>
                     <input type="number" name="pontszam_ertekeles" value="{{ old('pontszam_ertekeles') }}">
                     @error('pontszam_ertekeles')
                          <p>{{ $message }}</p>

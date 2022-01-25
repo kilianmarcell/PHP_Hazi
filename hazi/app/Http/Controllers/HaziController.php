@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\HaziRequest;
 use App\Models\Haziertekeles;
 use Illuminate\Http\Request;
 
@@ -34,14 +35,8 @@ class HaziController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(HaziRequest $request)
     {
-        $validated = $request->validate([
-            'url' => 'required|min:8',
-            'szoveges_ertekeles' => 'required|min:0|max:1000',
-            'pontszam_ertekeles' => 'required|numeric|min:0|max:100',
-        ]);
-
         $datas = $request->only(['url', 'szoveges_ertekeles', 'pontszam_ertekeles']);
         $hazi = new Haziertekeles();
         $hazi->fill($datas);
@@ -68,7 +63,7 @@ class HaziController extends Controller
      */
     public function edit(Haziertekeles $haziertekeles)
     {
-        //
+        return view('hazik.edit', [ 'haziertekeles' => $haziertekeles]);
     }
 
     /**
@@ -78,9 +73,12 @@ class HaziController extends Controller
      * @param  \App\Models\Haziertekeles  $haziertekeles
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Haziertekeles $haziertekeles)
+    public function update(HaziRequest $request, Haziertekeles $haziertekeles)
     {
-        //
+        $adatok = $request->only(['url', 'szoveges_ertekeles', 'pontszam_ertekeles']);
+        $haziertekeles->fill($adatok);
+        $haziertekeles->save();
+        return redirect()->route('hazik.show', $haziertekeles->id);
     }
 
     /**
@@ -91,6 +89,7 @@ class HaziController extends Controller
      */
     public function destroy(Haziertekeles $haziertekeles)
     {
-        //
+        $haziertekeles->delete();
+        return redirect()->route('hazik.index');
     }
 }
