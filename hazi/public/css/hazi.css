@@ -34,3 +34,19 @@ tr {
 .sorkizart {
     text-align: justify;
 }
+
+#listaz {
+    font-size: 30px;
+}
+
+li {
+    padding: 20px;
+}
+
+button {
+    background-color: white;
+    color: black;
+    font-size: 20px;
+    padding: 10px;
+    margin: 20px;
+}

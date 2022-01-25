@@ -8,6 +8,6 @@
      <link rel="stylesheet" href="{{ asset('css/hazi.css') }}">
 </head>
 <body>
-     
+     <input type="text" id="">
 </body>
 </html>

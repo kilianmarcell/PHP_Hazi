@@ -14,7 +14,7 @@ class HaziController extends Controller
      */
     public function index()
     {
-        $hazik = Haziertekeles::all()->get;
+        $hazik = Haziertekeles::all();
         return view('hazik.index', [ 'hazik' => $hazik ]);
     }
 
@@ -25,7 +25,7 @@ class HaziController extends Controller
      */
     public function create()
     {
-        //
+        return view('hazik.create');
     }
 
     /**
@@ -45,9 +45,9 @@ class HaziController extends Controller
      * @param  \App\Models\Haziertekeles  $haziertekeles
      * @return \Illuminate\Http\Response
      */
-    public function show(Haziertekeles $haziertekeles)
+    public function show(Haziertekeles $hazi)
     {
-        return view('hazik.show', [ 'hazi' => $haziertekeles ]);
+        return view('hazik.show', [ 'hazi' => $hazi ]);
     }
 
     /**

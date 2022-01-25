@@ -10,6 +10,7 @@
 <body>
     <div>
         <h1>Házi feladatok</h1>
+        <a href="{{ route('hazik.create') }}"><button>Új házi hozzáadása</button></a>
         <table>
             <thead>
                 <th>Url</th>
@@ -18,11 +19,11 @@
             </thead>
             <tbody>
                 @foreach ($hazi as $h)
-                <tr>
-                    <td><a href="{{ route('hazi.show', $h->id) }}">{{ $h->url }}</a></td>
-                    <td class="sorkizart">{{ $h->szoveges_ertekeles }}</td>
-                    <td class="kozep">{{ $h->pontszam_ertekeles }}</td>
-                </tr>
+                    <tr>
+                        <td class="kozep">{{ $h->url }}</td>
+                        <td class="sorkizart">{{ $h->szoveges_ertekeles }}</td>
+                        <td class="kozep">{{ $h->pontszam_ertekeles }}</td>
+                    </tr>
                 @endforeach
             </tbody>
         </table>

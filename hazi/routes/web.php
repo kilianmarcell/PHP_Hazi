@@ -20,4 +20,4 @@ Route::get('/', function () {
     return view('hazik.index', ["hazi" => $hazi]);
 });
 
-Route::resource('hazi', HaziController::class);
+Route::resource('hazik', HaziController::class);
