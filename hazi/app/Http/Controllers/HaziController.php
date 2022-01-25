@@ -36,7 +36,11 @@ class HaziController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $datas = $request->only(['url', 'szoveges_ertekeles', 'pontszam_ertekeles']);
+        $hazi = new Haziertekeles();
+        $hazi->fill($datas);
+        $hazi->save();
+        return redirect()->route('hazik.index');
     }
 
     /**

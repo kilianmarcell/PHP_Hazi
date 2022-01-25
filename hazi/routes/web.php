@@ -16,8 +16,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $hazi = Haziertekeles::all();
-    return view('hazik.index', ["hazi" => $hazi]);
+    $hazik = Haziertekeles::all();
+    return view('hazik.index', ["hazik" => $hazik]);
 });
 
 Route::resource('hazik', HaziController::class);

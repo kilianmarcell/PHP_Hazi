@@ -18,7 +18,7 @@
                 <th>Pontszámos értékelés</th>
             </thead>
             <tbody>
-                @foreach ($hazi as $h)
+                @foreach ($hazik as $h)
                     <tr>
                         <td class="kozep">{{ $h->url }}</td>
                         <td class="sorkizart">{{ $h->szoveges_ertekeles }}</td>
