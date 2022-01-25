@@ -36,6 +36,12 @@ class HaziController extends Controller
      */
     public function store(Request $request)
     {
+        $validated = $request->validate([
+            'url' => 'required|min:8',
+            'szoveges_ertekeles' => 'required|min:0|max:1000',
+            'pontszam_ertekeles' => 'required|numeric|min:0|max:100',
+        ]);
+
         $datas = $request->only(['url', 'szoveges_ertekeles', 'pontszam_ertekeles']);
         $hazi = new Haziertekeles();
         $hazi->fill($datas);

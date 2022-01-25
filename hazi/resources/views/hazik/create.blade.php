@@ -21,15 +21,24 @@
                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                <div>
                     Url:<br>
-                    <input type="text" name="url">
+                    <input type="text" name="url" value="{{ old('url') }}">
+                    @error('url')
+                         <p>{{ $message }}</p>
+                    @enderror
                </div>
                <div>
                     Szöveges értékelés:<br>
-                    <input type="text" name="szoveges_ertekeles">
+                    <input type="text" name="szoveges_ertekeles" value="{{ old('szoveges_ertekeles') }}">
+                    @error('szoveges_ertekeles')
+                         <p>{{ $message }}</p>
+                    @enderror
                </div>
                <div>
                     Pontszám:<br>
-                    <input type="number" name="pontszam_ertekeles">
+                    <input type="number" name="pontszam_ertekeles" value="{{ old('pontszam_ertekeles') }}">
+                    @error('pontszam_ertekeles')
+                         <p>{{ $message }}</p>
+                    @enderror
                </div>
                <div>
                     <input type="submit" value="Create">
