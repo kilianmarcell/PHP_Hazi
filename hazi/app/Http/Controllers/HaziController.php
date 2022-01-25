@@ -61,9 +61,9 @@ class HaziController extends Controller
      * @param  \App\Models\Haziertekeles  $haziertekeles
      * @return \Illuminate\Http\Response
      */
-    public function edit(Haziertekeles $haziertekeles)
+    public function edit(Haziertekeles $hazi)
     {
-        return view('hazik.edit', [ 'haziertekeles' => $haziertekeles]);
+        return view('hazik.edit', [ 'hazi' => $hazi]);
     }
 
     /**
@@ -78,7 +78,7 @@ class HaziController extends Controller
         $adatok = $request->only(['url', 'szoveges_ertekeles', 'pontszam_ertekeles']);
         $haziertekeles->fill($adatok);
         $haziertekeles->save();
-        return redirect()->route('hazik.show', $haziertekeles->id);
+        return redirect()->route('hazik.index');
     }
 
     /**

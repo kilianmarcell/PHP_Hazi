@@ -24,14 +24,14 @@
                         <td class="sorkizart">{{ $h->szoveges_ertekeles }}</td>
                         <td class="kozep">{{ $h->pontszam_ertekeles }}</td>
                         <td>
-                            <form method="POST" action="{{ route('hazik.destroy', $h->id) }}">
+                            <form method="POST" action="{{ route('hazik.destroy', $h) }}">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit">Törlés</button>
                             </form>
                         </td>
                         <td>
-                            <a href="{{ route('hazik.edit', $h->id) }}">Szerkesztés</a>
+                            <a href="{{ route('hazik.edit', $h) }}">Szerkesztés</a>
                         </td>
                     </tr>
                 @endforeach
