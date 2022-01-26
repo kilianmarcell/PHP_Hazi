@@ -16,15 +16,24 @@
                <div>
                     <selection class="kitoltendo">Url:</selection><br>
                     <input type="text" name="url" value="{{ $hazi->url }}">
+                    @error('url')
+                         <p>{{ $message }}</p>
+                    @enderror
                </div>
                <div>
                     <selection class="kitoltendo">Szöveges értékelés:</selection><br>
-                    <input type="number" name="szoveges_ertekeles" value="{{ $hazi->szoveges_ertekeles }}">
+                    <input type="text" name="szoveges_ertekeles" value="{{ $hazi->szoveges_ertekeles }}">
+                    @error('szoveges_ertekeles')
+                         <p>{{ $message }}</p>
+                    @enderror
                </div>
                <div>
                     <selection class="kitoltendo">Pontszám:</selection><br>
                     <input type="number" name="pontszam_ertekeles" value="{{ $hazi->pontszam_ertekeles }}">
-               </div>
+                    @error('pontszam_ertekeles')
+                         <p>{{ $message }}</p>
+                    @enderror
+                </div>
                <div>
                     <input type="submit" value="Edit">
                </div>

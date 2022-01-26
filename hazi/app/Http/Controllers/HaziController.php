@@ -63,8 +63,8 @@ class HaziController extends Controller
      */
     public function edit($id)
     {
-        Haziertekeles::find($id);
-        return view('hazik.edit', [ 'hazi' => $id]);
+        $hazi = Haziertekeles::find($id);
+        return view('hazik.edit', [ 'hazi' => $hazi]);
     }
 
     /**
@@ -74,11 +74,12 @@ class HaziController extends Controller
      * @param  \App\Models\Haziertekeles  $haziertekeles
      * @return \Illuminate\Http\Response
      */
-    public function update(HaziRequest $request, Haziertekeles $haziertekeles)
+    public function update(HaziRequest $request, $id)
     {
         $adatok = $request->only(['url', 'szoveges_ertekeles', 'pontszam_ertekeles']);
-        $haziertekeles->fill($adatok);
-        $haziertekeles->save();
+        $hazi = Haziertekeles::find($id);
+        $hazi->fill($adatok);
+        $hazi->save();
         return redirect()->route('hazik.index');
     }
 
