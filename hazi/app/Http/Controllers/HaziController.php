@@ -61,9 +61,10 @@ class HaziController extends Controller
      * @param  \App\Models\Haziertekeles  $haziertekeles
      * @return \Illuminate\Http\Response
      */
-    public function edit(Haziertekeles $hazi)
+    public function edit($id)
     {
-        return view('hazik.edit', [ 'hazi' => $hazi]);
+        Haziertekeles::find($id);
+        return view('hazik.edit', [ 'hazi' => $id]);
     }
 
     /**
@@ -87,9 +88,9 @@ class HaziController extends Controller
      * @param  \App\Models\Haziertekeles  $haziertekeles
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Haziertekeles $haziertekeles)
+    public function destroy($id)
     {
-        $haziertekeles->delete();
+        Haziertekeles::destroy($id);
         return redirect()->route('hazik.index');
     }
 }
